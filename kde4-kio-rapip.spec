@@ -12,7 +12,7 @@
 
 Name:		kde4-kio-rapip
 Summary:	KDE 4 KIOslave for Windows Mobile devices
-Version:	0.1
+Version:	0.2
 Release:	%{release}
 License:	MIT
 Source0:	http://downloads.sourceforge.net/synce/%{distname}
@@ -56,4 +56,6 @@ rm -rf %{buildroot}
 %doc AUTHORS LICENSE ChangeLog README
 %{_kde_libdir}/kde4/kio_rapip.so
 %{_kde_services}/rapip.protocol
+%{_kde_services}/synce.protocol
+%{_datadir}/mime/packages/synce-kde4-kio-rapip.xml
 %{_iconsdir}/hicolor/*/apps/*.png
