@@ -59,3 +59,20 @@ rm -rf %{buildroot}
 %{_kde_services}/synce.protocol
 %{_datadir}/mime/packages/synce-kde4-kio-rapip.xml
 %{_iconsdir}/hicolor/*/apps/*.png
+
+
+%changelog
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 0.2-2mdv2011.0
++ Revision: 619920
+- the mass rebuild of 2010.0 packages
+
+* Tue Aug 11 2009 Emmanuel Andry <eandry@mandriva.org> 0.2-1mdv2010.0
++ Revision: 415173
+- New version 0.2
+- update files list
+
+* Thu Sep 04 2008 Adam Williamson <awilliamson@mandriva.org> 0.1-1mdv2009.0
++ Revision: 280230
+- import kde4-kio-rapip
+
+
