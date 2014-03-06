@@ -1,28 +1,15 @@
-%define svn		0
-%define rel		2
-%if %svn
-%define release		%mkrel 0.%svn.%rel
-%define distname	%name-%svn.tar.lzma
-%define	dirname		synce-gvfs
-%else
-%define release		%mkrel %rel
-%define distname	%name-%version.tar.gz
-%define dirname		%name-%version
-%endif
-
-Name:		kde4-kio-rapip
 Summary:	KDE 4 KIOslave for Windows Mobile devices
+Name:		kde4-kio-rapip
 Version:	0.2
-Release:	%{release}
+Release:	3
 License:	MIT
-Source0:	http://downloads.sourceforge.net/synce/%{distname}
-URL:		http://synce.sourceforge.net/
-Group:		Communications
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	libsynce-devel
-BuildRequires:	librapi-devel
+Group:		Graphical desktop/KDE
+Url:		http://synce.sourceforge.net/
+Source0:	http://downloads.sourceforge.net/synce/%{name}-%{version}.tar.gz
 BuildRequires:	cmake
 BuildRequires:	kdelibs4-devel
+BuildRequires:	pkgconfig(librapi2)
+BuildRequires:	pkgconfig(libsynce)
 
 %description
 This is a full featured KIOslave used to browse through the file
@@ -35,44 +22,20 @@ not sure about the name of your device, simply go to rapip:/ which
 will show the first device it finds.
 
 %prep
-%setup -q -n %{dirname}
+%setup -q
 
 %build
-rm -f CMakeCache.txt 
+rm -f CMakeCache.txt
 %cmake
 %make
 
 %install
-rm -rf %{buildroot}
-pushd build
-%makeinstall_std
-popd
-
-%clean
-rm -rf %{buildroot}
+%makeinstall_std -C build
 
 %files
-%defattr(-,root,root)
 %doc AUTHORS LICENSE ChangeLog README
 %{_kde_libdir}/kde4/kio_rapip.so
 %{_kde_services}/rapip.protocol
 %{_kde_services}/synce.protocol
 %{_datadir}/mime/packages/synce-kde4-kio-rapip.xml
 %{_iconsdir}/hicolor/*/apps/*.png
-
-
-%changelog
-* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 0.2-2mdv2011.0
-+ Revision: 619920
-- the mass rebuild of 2010.0 packages
-
-* Tue Aug 11 2009 Emmanuel Andry <eandry@mandriva.org> 0.2-1mdv2010.0
-+ Revision: 415173
-- New version 0.2
-- update files list
-
-* Thu Sep 04 2008 Adam Williamson <awilliamson@mandriva.org> 0.1-1mdv2009.0
-+ Revision: 280230
-- import kde4-kio-rapip
-
-
