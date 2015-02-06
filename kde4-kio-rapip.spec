@@ -1,7 +1,7 @@
 Summary:	KDE 4 KIOslave for Windows Mobile devices
 Name:		kde4-kio-rapip
 Version:	0.2
-Release:	3
+Release:	4
 License:	MIT
 Group:		Graphical desktop/KDE
 Url:		http://synce.sourceforge.net/
