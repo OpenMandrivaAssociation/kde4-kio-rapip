@@ -4,7 +4,7 @@ Version:	0.2
 Release:	4
 License:	MIT
 Group:		Graphical desktop/KDE
-Url:		http://synce.sourceforge.net/
+Url:		https://synce.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/synce/%{name}-%{version}.tar.gz
 BuildRequires:	cmake
 BuildRequires:	kdelibs4-devel
